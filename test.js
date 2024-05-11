@@ -54,8 +54,10 @@ function toAdd()
 
 function removeTask(index) 
 {
+    var taskElement = document.getElementById(`task_${index}`);
+    taskElement.parentElement.remove();
+
     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
     storedTasks.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(storedTasks));
-    loadTasksFromLocalStorage(); 
 }
