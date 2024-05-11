@@ -36,7 +36,7 @@ function loadTasksFromLocalStorage() {
     }
 }
 
-function mySearch() {
+function toAdd() {
     var taskName = document.getElementById("myInput").value;
     var storedTasks = localStorage.getItem("tasks");
     var tasks = storedTasks ? JSON.parse(storedTasks) : [];
