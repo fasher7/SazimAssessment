@@ -1,13 +1,16 @@
-document.getElementById("clearLocalStorageButton").addEventListener("click", function() {
+document.getElementById("clearLocalStorageButton").addEventListener("click", function() 
+{
     localStorage.clear();
     document.getElementById("showTask").innerHTML = "";
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() 
+{
     loadTasksFromLocalStorage();
 });
 
-function loadTasksFromLocalStorage() {
+function loadTasksFromLocalStorage() 
+{
     var storedTasks = localStorage.getItem("tasks");
     if (storedTasks) {
         var tasks = JSON.parse(storedTasks);
@@ -36,7 +39,8 @@ function loadTasksFromLocalStorage() {
     }
 }
 
-function toAdd() {
+function toAdd() 
+{
     var taskName = document.getElementById("myInput").value;
     var storedTasks = localStorage.getItem("tasks");
     var tasks = storedTasks ? JSON.parse(storedTasks) : [];
@@ -66,13 +70,15 @@ function toAdd() {
     });
 };
 
-function updateTaskCompletionStatus(index, completed) {
+function updateTaskCompletionStatus(index, completed) 
+{
     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
     storedTasks[index].completed = completed;
     localStorage.setItem("tasks", JSON.stringify(storedTasks));
 }
 
-function removeTask(index) {
+function removeTask(index) 
+{
     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
     storedTasks.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(storedTasks));
